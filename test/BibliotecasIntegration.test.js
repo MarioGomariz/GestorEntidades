@@ -26,7 +26,7 @@ function BibliotecasApp() {
 
 describe('Bibliotecas - Test de Integración', () => {
 
-  test('debe renderizar el formulario y la lista vacía inicialmente', () => {
+  test('test 1: debe renderizar el formulario y la lista vacía inicialmente', () => {
     render(<BibliotecasApp />);
     
     // Verificar que el formulario existe
@@ -38,7 +38,7 @@ describe('Bibliotecas - Test de Integración', () => {
     expect(screen.getByText(/No hay bibliotecas registradas/i)).toBeInTheDocument();
   });
 
-  test('debe agregar una biblioteca al llenar y enviar el formulario', async () => {
+  test('test 2: debe agregar una biblioteca al llenar y enviar el formulario', async () => {
     render(<BibliotecasApp />);
     
     // Llenar el formulario
@@ -66,7 +66,7 @@ describe('Bibliotecas - Test de Integración', () => {
     expect(direccionInput.value).toBe('');
   });
 
-  test('debe agregar múltiples bibliotecas y mostrarlas en la tabla', async () => {
+  test('test 3: debe agregar múltiples bibliotecas y mostrarlas en la tabla', async () => {
     render(<BibliotecasApp />);
     
     const nombreInput = screen.getByLabelText(/Nombre/i);
@@ -99,7 +99,7 @@ describe('Bibliotecas - Test de Integración', () => {
     });
   });
 
-  test('debe eliminar una biblioteca al hacer click en Eliminar', async () => {
+  test('test 4: debe eliminar una biblioteca al hacer click en Eliminar', async () => {
     render(<BibliotecasApp />);
     
     // Agregar una biblioteca
@@ -127,7 +127,7 @@ describe('Bibliotecas - Test de Integración', () => {
     });
   });
 
-  test('debe editar una biblioteca existente', async () => {
+  test('test 5: debe editar una biblioteca existente', async () => {
     render(<BibliotecasApp />);
     
     // Agregar una biblioteca
@@ -177,7 +177,7 @@ describe('Bibliotecas - Test de Integración', () => {
     expect(screen.getByRole('button', { name: /Guardar Biblioteca/i })).toBeInTheDocument();
   });
 
-  test('flujo completo: agregar, editar y eliminar bibliotecas', async () => {
+  test('test 6: flujo completo: agregar, editar y eliminar bibliotecas', async () => {
     render(<BibliotecasApp />);
     
     const nombreInput = screen.getByLabelText(/Nombre/i);
